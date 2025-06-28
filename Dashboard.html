@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard | VIN Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 50px;
+    }
+    .container {
+      background: #fff;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome to VIN Dashboard</h1>
+    <input type="text" id="vinInput" placeholder="Enter VIN or Engine Number">
+    <button onclick="checkVin()">Check Vehicle</button>
+    <div class="error" id="errorBox">VIN not recognized. Try again.</div>
+  </div>
+
+  <script>
+    function checkVin() {
+      const vin = document.getElementById("vinInput").value.trim().toUpperCase();
+      const errorBox = document.getElementById("errorBox");
+
+      if (vin === "TN1XY1234") {
+        window.location.href = "viewc.html";
+      } else if (vin === "TN2BK5678") {
+        window.location.href = "viewb.html";
+      } else if (vin === "TN3SC4321") {
+        window.location.href = "views.html";
+      } else {
+        errorBox.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
